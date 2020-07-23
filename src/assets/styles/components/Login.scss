@@ -1,0 +1,107 @@
+.login {
+    background: linear-gradient(#48cae4, #0077b6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px);
+  }
+  
+  .login_container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 68px 40px;
+    min-height: 700px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  
+  .login_container-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login_container-form label {
+    font-size: 14px;
+  }
+  
+  .login_container-rememberme {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .login_container-rememberme a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .login_container-rememberme a:hover {
+    text-decoration: underline;
+  }
+  
+  .login_container-socialmedia > div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .login_container-socialmedia > div > img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .login_container-register {
+    font-size: 14px;
+  }
+  
+  .login_container-register a {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .login_container-register a:hover {
+    text-decoration: underline;
+  }
+  
+  .input {
+    background-color: transparent;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+    font-family: "Muli", sans-serif;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    height: 50px;
+  }
+  
+  ::placeholder {
+    color: white;
+  }
+  
+  .button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Muli", sans-serif;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+  }
+  
