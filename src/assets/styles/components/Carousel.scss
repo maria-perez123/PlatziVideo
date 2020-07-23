@@ -1,0 +1,48 @@
+.carousel
+{
+    width: 100%;
+    overflow-x: scroll;
+    padding: 30px;
+    position: relative;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+}
+.carousel::-webkit-scrollbar
+{
+    display: none;
+    width: 8px;     /* Tamaño del scroll en vertical */
+}
+.carousel::-webkit-scrollbar-thumb
+{
+    background: #ccc;
+    border-radius: 4px;
+}
+.carousel::-webkit-scrollbar-thumb:hover 
+{
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.carousel::-webkit-scrollbar-thumb:active 
+{
+    background-color: #999999;
+}
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+.carousel::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+.carousel::-webkit-scrollbar-track:hover,
+.carousel::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+.carousel_container
+{
+    transition: 450ms -webkit-transform;
+    transition: 450ms transform;
+    transition: 450ms transform, 450ms -webkit-transform;
+    white-space: nowrap;
+    margin: 70px 0px;
+    padding-bottom: 10px;
+}
