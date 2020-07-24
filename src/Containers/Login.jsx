@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {loginRequest} from '../actions';
 //import googleIcon from '../assets/Statics/nombreimagen';
 import '../assets/styles/components/Login.scss';
+import Header from '../components/Header';
 
 const Login=props=>{
     
@@ -25,6 +26,8 @@ const Login=props=>{
     }
 
     return(
+        <>
+        <Header isLogin/>
         <section className="login">
             <section className="login_container">
                 <h2>Inicia sesión</h2>
@@ -60,11 +63,13 @@ const Login=props=>{
                     <div><img src="https://img.icons8.com/nolan/64/google-plus.png" alt="google logo" />Inicia sesión con google</div>  
                     <div><img src="https://img.icons8.com/nolan/64/twitter-circled.png" alt="twitter logo"/>Inicia sesión con twitter</div>
                 </section>
-                <p className="login_container-register">No tienes ninguna cuenta 
+                <p className="login_container-register">
+                    No tienes ninguna cuenta {''}
                     <Link to="/register">Registrate</Link>
                 </p>
             </section>
         </section>
+        </>
     );
 }
 

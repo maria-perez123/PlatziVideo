@@ -7,6 +7,10 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.isLogin, .isRegister{
+    background-color: #48cae4;
+}
 .header_img
 {
     width: 200px;
@@ -54,6 +58,8 @@
 {
     margin-right: 8px;
     width: 40px;
+    border-radius: 100%;
+    object-fit: cover;
 }
 .header_menu_profile p
 {

@@ -4,15 +4,16 @@ import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import Carouselitem from '../components/Carouselitem';
-import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
+import Header from '../components/Header';
 
 //const API='http://localhost:3000/initalState';
 
 const Home=({mylist, trends, originals})=>{
     return (
         <>
-            <Search/>  
+            <Header/>
+            <Search isHome/>  
             {mylist.length > 0 &&
                 <Categories title="mi lista">
                     <Carousel>

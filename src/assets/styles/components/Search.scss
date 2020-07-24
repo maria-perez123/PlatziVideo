@@ -7,12 +7,15 @@
     flex-direction: column;
     border-radius: 0px 0px 40px 40px;
 }
+.isHome{
+    width: 70%;
+}
 .main_title
 {
     color: white;
     font-size: 25px;
 }
-.input
+.input2
 {
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid whitesmoke;
@@ -21,6 +24,7 @@
     font-size: 16px;
     height: 50px;
     padding: 0px 20px;
+    outline: none;
 }
 ::placeholder
 {

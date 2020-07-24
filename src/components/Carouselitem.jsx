@@ -4,6 +4,7 @@ import {setFavorite} from '../actions';
 import {deleteFavorite} from '../actions';
 import PropTypes from 'prop-types';
 import '../assets/styles/components/Carouselitem.scss';
+import { Link } from 'react-router-dom';
 
 const Carouselitem=(props)=>{
     const {id, cover, title, year, contentRating, duration, isList}=props;
@@ -20,13 +21,14 @@ const Carouselitem=(props)=>{
             <img className="carousel-item_img" src={cover} alt={title} />
             <div className="carousel-item_details">
                 <div>
-                    <img 
-                        src="https://img.icons8.com/nolan/64/play.png" 
-                        alt="play" 
-                        width="25px" 
-                        height="25px"
-                    />
-                    
+                    <Link to={`/player/${id}`}>
+                        <img 
+                            src="https://img.icons8.com/nolan/64/play.png" 
+                            alt="play" 
+                            width="25px" 
+                            height="25px"
+                        />
+                    </Link>
                     { isList ? 
                        <img 
                             src="https://img.icons8.com/nolan/64/delete-sign.png" 
