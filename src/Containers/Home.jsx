@@ -9,12 +9,28 @@ import Header from '../components/Header';
 
 //const API='http://localhost:3000/initalState';
 
-const Home=({mylist, trends, originals})=>{
+const Home=({mylist, trends, originals, searchResult})=>{
+
+    const hasSearch= Object.keys(searchResult).length>0;
+
     return (
         <>
             <Header/>
             <Search isHome/>  
-            {mylist.length > 0 &&
+            { hasSearch &&
+                <Categories title="Resultados de la busqueda...">
+                    <Carousel>
+                        {searchResult.map(item =>
+                        <CarouselItem 
+                            key={item.id} 
+                            {...item}
+                        />
+                        )}
+                    </Carousel>
+                </Categories>                       
+            }
+            {
+                mylist.length > 0 &&
                 <Categories title="mi lista">
                     <Carousel>
                         {mylist.map(item=>
@@ -51,6 +67,7 @@ const mapStateToProps=state=>{
         mylist:state.mylist,
         trends:state.trends,
         originals:state.originals,
+        searchResult: state.searchResult,
     };
 };
 
