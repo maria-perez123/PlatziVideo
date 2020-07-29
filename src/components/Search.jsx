@@ -6,14 +6,16 @@ import '../assets/styles/components/Search.scss';
 
 const Search=props=>{
 
-    const {isHome, getVideoSearch} =props;
+    const {isHome} =props;
 
     const inputStyle=classNames('input2',{
         isHome
     });
 
     const handleInput=event=>{
-        getVideoSearch(event.target.value);
+        if (event.key === 'Enter') {
+            props.getVideoSearch(event.target.value);
+        }
     }
 
     return(
@@ -23,7 +25,7 @@ const Search=props=>{
                 className={inputStyle}
                 type="text" 
                 placeholder="Buscar..." 
-                onChange={handleInput}
+                onKeyUp={handleInput}
             />
         </section>
     );

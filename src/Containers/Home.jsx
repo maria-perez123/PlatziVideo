@@ -17,7 +17,7 @@ const Home=({mylist, trends, originals, searchResult})=>{
         <>
             <Header/>
             <Search isHome/>  
-            { hasSearch &&
+            { hasSearch?
                 <Categories title="Resultados de la busqueda...">
                     <Carousel>
                         {searchResult.map(item =>
@@ -27,22 +27,10 @@ const Home=({mylist, trends, originals, searchResult})=>{
                         />
                         )}
                     </Carousel>
-                </Categories>                       
+                </Categories>      
+                : null           
             }
-            {
-                mylist.length > 0 &&
-                <Categories title="mi lista">
-                    <Carousel>
-                        {mylist.map(item=>
-                        <Carouselitem 
-                            key={item.id}
-                            {...item}
-                            isList
-                        />
-                        )}
-                    </Carousel>  
-                </Categories>
-            }
+            
             <Categories title="tendencia">
                 <Carousel>
                     {trends.map(item=>
