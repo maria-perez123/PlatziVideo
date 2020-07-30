@@ -7,28 +7,48 @@ import Carouselitem from '../components/Carouselitem';
 import '../assets/styles/App.scss';
 import Header from '../components/Header';
 
+//¿los proptypes solo sirven para identificar el tipo de prop?
+//¿ En que casos practicos se suele usar useEffect, en el proyecto se hacia para obetener un id, cada vez que se va a una ruta del player?
+
 //const API='http://localhost:3000/initalState';
 
-const Home=({mylist, trends, originals, searchResult})=>{
+const Home=({mylist, trends, originals, searchResult, videoSearching})=>{
 
     const hasSearch= Object.keys(searchResult).length>0;
+    console.log(videoSearching[0]);
 
     return (
         <>
             <Header/>
             <Search isHome/>  
-            { hasSearch?
+            {videoSearching[0]?
+            (hasSearch&&
                 <Categories title="Resultados de la busqueda...">
                     <Carousel>
                         {searchResult.map(item =>
-                        <CarouselItem 
+                        <Carouselitem 
                             key={item.id} 
                             {...item}
                         />
                         )}
                     </Carousel>
-                </Categories>      
-                : null           
+                </Categories>  
+            ) :
+            <h1>Video con nombre {videoSearching[1]} no encontrado</h1>
+            }  
+
+            {mylist.length>0 &&
+                <Categories title="mi lista">
+                    <Carousel>
+                        {mylist.map(item =>
+                        <Carouselitem 
+                            key={item.id} 
+                            {...item}
+                            isList
+                        />
+                        )}
+                    </Carousel>
+                </Categories>                
             }
             
             <Categories title="tendencia">
@@ -56,6 +76,9 @@ const mapStateToProps=state=>{
         trends:state.trends,
         originals:state.originals,
         searchResult: state.searchResult,
+                //***************** */
+                videoSearching: state.videoSearching,
+                //***************** */
     };
 };
 

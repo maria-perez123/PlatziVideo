@@ -28,3 +28,9 @@ export const getVideoSearch=payload=>({
     type:'GET_VIDEO_SEARCH',
     payload, 
 });
+//**************** */
+export const videoisSearching=payload=>({
+    type:'VIDEO_IS_SEARCHING',
+    payload, 
+});
+//**************** */

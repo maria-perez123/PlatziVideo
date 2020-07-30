@@ -9,6 +9,9 @@ const initialState= {
     "user":{},
     "playing":{},
     "searchResult": [],
+    //**************** */
+    "videoSearching":[true, " "],
+    //**************** */
     "mylist": [],
     "trends": [
         {

@@ -2,6 +2,10 @@ import React from 'react';
 import classNames from 'classnames';
 import {connect} from 'react-redux';
 import {getVideoSearch} from '../actions';
+//**************** */
+import {videoisSearching} from '../actions';
+//**************** */
+
 import '../assets/styles/components/Search.scss';
 
 const Search=props=>{
@@ -15,6 +19,10 @@ const Search=props=>{
     const handleInput=event=>{
         if (event.key === 'Enter') {
             props.getVideoSearch(event.target.value);
+            //**************** */
+            props.videoisSearching(event.target.value);
+
+            //***************** */
         }
     }
 
@@ -34,11 +42,17 @@ const Search=props=>{
 const mapStateToProps =state=>{
     return{
         searchResult: state.searchResult,
+        //***************** */
+        videoSearching: state.videoSearching,
+        //***************** */
     }
 }
 
 const mapDispatchToProps={
     getVideoSearch,
+    //***************** */
+    videoisSearching
+    //***************** */
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Search);

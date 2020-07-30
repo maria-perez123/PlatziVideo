@@ -39,10 +39,24 @@ const reducer=(state, action)=>{
             return{
                 ...state,
                 searchResult:state.trends.concat(state.originals).filter((item) => item.title.toLowerCase().search(action.payload.toLowerCase()) !== -1)
-                
-                
                 //listas.filter(item => item.title.toLowerCase().includes(action.payload.toLowerCase()))
             }    
+
+
+        //**************** */
+        case 'VIDEO_IS_SEARCHING':
+            const lista=state.trends.concat(state.originals).filter((item) => item.title.toLowerCase().search(action.payload.toLowerCase()) !== -1);
+            if(lista.length>0){
+                return { ...state, videoSearching:[true, action.payload]}
+            } else{
+                return{
+                ...state,
+                videoSearching: [false, action.payload],
+                }
+            }
+
+        //**************** */
+
         default:
             return state;
 

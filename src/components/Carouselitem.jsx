@@ -58,10 +58,10 @@ const Carouselitem=(props)=>{
 
 Carouselitem.propTypes={
     cover: PropTypes.string,
-     title:PropTypes.string,  
-     year:  PropTypes.number, 
-     contentRating: PropTypes.string,  
-     duration: PropTypes.number
+    title:PropTypes.string,  
+    year:  PropTypes.number, 
+    contentRating: PropTypes.string,  
+    duration: PropTypes.number
 }
 
 const mapDispatchToProps={
