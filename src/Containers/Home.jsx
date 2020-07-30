@@ -34,7 +34,7 @@ const Home=({mylist, trends, originals, searchResult, videoSearching})=>{
                     </Carousel>
                 </Categories>  
             ) :
-            <h1>Video con nombre {videoSearching[1]} no encontrado</h1>
+            <h1>Video "{videoSearching[1]}" no encontrado</h1>
             }  
 
             {mylist.length>0 &&
